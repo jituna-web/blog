@@ -1,0 +1,19 @@
+{block navig}
+
+<li n:if="$user->isLoggedIn"><a n:href="Post:create">Napsat nový příspěvek</a></li>
+{/block}
+
+{block content}
+<h1 n:block="title">Vítejte na blogu jh-design.cz</h1>
+
+<div n:foreach="$posts as $post" class="post">
+	<div class="date"> {$post->created_at|date:'F j, Y'} </div>
+
+	<h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
+
+	<div>{$post->content}</div>
+</div>
+
+
+
+{/block}

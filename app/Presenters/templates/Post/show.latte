@@ -1,0 +1,17 @@
+{block navig}
+<li n:if="$user->isLoggedIn()"><a n:href="edit $post->id">Upravit příspěvěk</a></li>
+{/block}
+
+{block content}
+
+<p><a n:href="Homepage:"> zpět na výpis příspěvků</a></p>
+<div class="date"> {$post->created_at|date:'F j, Y'}</div>
+{block title}<h1>{$post->title}</h1>{/block}
+<div class="post">{$post->content}</div>
+
+
+
+<h2>Nový komentář</h2>
+
+{control commentForm}
+

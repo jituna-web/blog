@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Blog jh-design.cz</title>
+</head>
+
+<body>
+
+
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{include content}
+
+	{block scripts}
+	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+	{/block}
+</body>
+</html>
